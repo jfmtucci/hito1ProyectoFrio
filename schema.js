@@ -21,8 +21,8 @@ response = {
   },
   required: ["usuario"],
 };
-// get publicaciones
 
+// get publicaciones
 response = {
   type: "object",
   properties: {
@@ -33,6 +33,8 @@ response = {
   required: ["publicaciones"],
 };
 
+//get Ventas:id
+//get favoritos:id
 // get publicaciones:id
 
 // post Login
@@ -99,4 +101,123 @@ response = {
     },
   },
   required: ["token", "email"],
+};
+
+//post articulos
+request = payload = {
+  type: "object",
+  properties: {
+    nombre: {
+      type: "string",
+    },
+    Descripcion: {
+      type: "string",
+    },
+    Precio: {
+      type: "string",
+    },
+    Stock: {
+      type: "string",
+    },
+    Url: {
+      type: "string",
+    },
+  },
+  required: ["nombre", "Descripcion", "Precio", "Stock", "Url"],
+};
+Header = {
+  type: "object",
+  properties: {
+    Authorization: {
+      type: "string",
+    },
+    "Content-Type": {
+      type: "string",
+    },
+  },
+  required: ["Authorization", "Content-Type"],
+};
+response = {
+  type: "object",
+  properties: {
+    message: {
+      type: "string",
+      const: "Producto registrado con exito",
+    },
+  },
+  required: ["message"],
+};
+
+//post publicacion
+request = payload = {
+  type: "object",
+  properties: {
+    id_producto: {
+      type: "string",
+    },
+    id_vendedor: {
+      type: "string",
+    },
+  },
+  required: ["id_producto", "id_vendedor"],
+};
+header = {
+  type: "object",
+  properties: {
+    Authorization: {
+      type: "string",
+    },
+    "Content-Type": {
+      type: "string",
+    },
+  },
+  required: ["Authorization", "Content-Type"],
+};
+response = {
+  type: "object",
+  properties: {
+    id_producto: { type: "number" },
+    id_vendedor: { type: "number" },
+    id_publicacion: { type: "number" },
+  },
+  required: ["id_producto", "id_vendedor", "id_publicacion"],
+};
+
+//post ventas
+request = payload = {
+  type: "object",
+  properties: {
+    id_publicacion: {
+      type: "string",
+    },
+    id_comprador: {
+      type: "string",
+    },
+    precioCompra: {
+      type: "string",
+    },
+  },
+  required: ["id_publicacion", "id_comprador", "precioCompra"],
+};
+header = {
+  type: "object",
+  properties: {
+    Authorization: {
+      type: "string",
+    },
+    "Content-Type": {
+      type: "string",
+    },
+  },
+  required: ["Authorization", "Content-Type"],
+};
+response = {
+  type: "object",
+  properties: {
+    message: {
+      type: "string",
+      const: "Venta registrada con éxito",
+    },
+  },
+  required: ["message"],
 };

@@ -50,7 +50,7 @@ app.get("/favoritos/:id", async (req, res) => {
 });
 
 //get Ventas:id
-app.get("/publicaciones/:id", async (req, res) => {
+app.get("/ventas/:id", async (req, res) => {
   res.json({
     ventas: [
       {
@@ -88,9 +88,9 @@ app.post("/articulos", async (req, res) => {
 //post publicacion
 app.post("/publicacion", async (req, res) => {
   res.json({
-    id_producto: "1234",
-    id_vendedor: "1234",
-    id_publicacion: "4321",
+    id_producto: 1234,
+    id_vendedor: 1234,
+    id_publicacion: 4321,
   });
 });
 
